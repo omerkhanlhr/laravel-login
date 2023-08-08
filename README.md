@@ -4,9 +4,11 @@
 ## connect laravel with pgadmin
 - enabled the extensions in php.ini:
 
+```
 extension=php_pdo_pgsql.dll
 extension=php_pdo_sqlite.dll
 extension=php_pgsql.dll
+```
 
 - go to .env file
 - put pgsql credentials
