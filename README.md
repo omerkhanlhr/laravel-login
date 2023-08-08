@@ -11,7 +11,20 @@ I will guide you through the steps to set up the database, the routes, the views
 - write `php artisan breeze:install` in terminal
 - write `php artisan migrate` in terminal
 - write `php artisan migrate` in terminal
-- Run the Server `php artisan serve`
+- write `npm install vite --save-dev`
+- add this script into `packages.json` file
+
+```
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "serve": "vite preview"
+}
+
+```
+- Make sure that you have a vite.config.js file in your project root directory
+- Open terminal and write `npm run dev`
+- Open another terminal and Run the Server `php artisan serve`
 
 ## connect laravel with pgadmin
 - enabled the extensions in php.ini:
