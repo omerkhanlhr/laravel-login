@@ -1,4 +1,4 @@
-![LARAVEL Developer](public\images\james-harrison-vpOeXr5wmR4-unsplash.jpg)
+![LARAVEL Developer](C:\Users\umar khan\Documents\project\public\images\james-harrison-vpOeXr5wmR4-unsplash.jpg "LARAVEL Developer")
 # LARAVEL Login System
 In this repository, you will learn how to create a login system with LARAVEL and PostgreSQL. This is a useful skill for web developers who want to authenticate users and protect their data.
 
