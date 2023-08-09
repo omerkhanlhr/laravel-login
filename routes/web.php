@@ -40,4 +40,6 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard',[AgentController::class,'index'])->name('agent.dashboard');
 });
 
+
+Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
 require __DIR__.'/auth.php';
