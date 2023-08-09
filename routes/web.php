@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 });
 Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard',[AgentController::class,'index'])->name('agent.dashboard');
