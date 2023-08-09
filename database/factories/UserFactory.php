@@ -20,29 +20,18 @@ class UserFactory extends Factory
         return [
             // 'name' => fake()->name(),
             // 'email' => fake()->unique()->safeEmail(),
-            // 'username'=>fake()->unique()->userName(),
-            // 'role'=>fake()->randomElement(['admin','user']),
+            // 'role'=>fake()->randomElement(['admin','user','agent']),
             // 'email_verified_at' => now(),
-            // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            // 'password' => '123456789', // password
             // 'remember_token' => Str::random(10),
-            [
-                'name'=>"Umer",
-            'email'=>"Umer@gmail.com",
-            // 'username'=>"Umer121",
-            'email_verified_at' => now(),
-            'password'=>"111",
-            'role'=>'admin',
-            'remember_token' => Str::random(10)
-        ],
-        [
-            'name'=>"Ali",
-            'email'=>"ali@gmail.com",
-            // 'username'=>"ali121",
-            'email_verified_at' => now(),
-            'password'=>"111",
-            'role'=>'user',
-            'remember_token' => Str::random(10)
-        ]
+
+                'name'=>"Agha",
+                'email'=>"agha321@gmail.com",
+                'role'=>'agent',
+                'email_verified_at'=>now(),
+                'password'=>'123456789',
+                'remember_token' => Str::random(10)
+
         ];
     }
 
