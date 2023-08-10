@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Welcome to agent dashboard</h1>
+    <a href="{{route('agent.logout')}}">Logout Here</a>
 </body>
 </html>

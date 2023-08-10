@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: NobleUI - HTML Bootstrap 5 Admin Dashboard Template
-Author: NobleUI
-Website: https://www.nobleui.com
-Portfolio: https://themeforest.net/user/nobleui/portfolio
-Contact: nobleui123@gmail.com
-Purchase: https://1.envato.market/nobleui_admin
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -17,8 +9,14 @@ License: For each use you must have a valid license purchased only from above li
 	<meta name="author" content="NobleUI">
 	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<title>Admin Login</title>
-
+	<title>Admin Login Panel</title>
+<style type="text/css">
+.authlogin-side-wrapper{
+    width:100%;
+    height:100%;
+    background-image:url({{ asset('images/login.png')}});
+}
+</style>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,34 +51,33 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="card">
 							<div class="row">
                 <div class="col-md-4 pe-md-0">
-                  <div class="auth-side-wrapper">
+                  <div class="authlogin-side-wrapper">
 
                   </div>
                 </div>
                 <div class="col-md-8 ps-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Easy<span>Learning</span></a>
+                    <a href="{{route('admin.login')}}" class="noble-ui-logo logo-light d-block mb-2">Noble<span>UI</span></a>
                     <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
-                    <form class="forms-sample"method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
                       <div class="mb-3">
-                        <label for="userEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="userEmail" placeholder="Email">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                       </div>
                       <div class="mb-3">
-                        <label for="userPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" autocomplete="current-password" placeholder="Password">
                       </div>
                       <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="authCheck">
+                        <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
                         <label class="form-check-label" for="authCheck">
                           Remember me
                         </label>
                       </div>
                       <div>
-
                         <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
-                            Login
+                          Login
                         </button>
                       </div>
                       <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>

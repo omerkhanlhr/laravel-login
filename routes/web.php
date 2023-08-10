@@ -32,14 +32,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+require __DIR__.'/auth.php';
+
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 });
 Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard',[AgentController::class,'index'])->name('agent.dashboard');
+    Route::get('/agent/logout',[AgentController::class,'logout'])->name('agent.logout');
 });
 
-
 Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
-require __DIR__.'/auth.php';
+
