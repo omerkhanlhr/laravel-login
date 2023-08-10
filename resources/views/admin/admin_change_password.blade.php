@@ -50,7 +50,7 @@
                                     @csrf
                                     <div class="mb-3">
                                           <label for="name" class="form-label">Old Password</label>
-                                          <input type="text" class="form-control @error('old_password')
+                                          <input type="password" class="form-control @error('old_password')
                                         is-invalid @enderror" name="old_password" id="old_password" autocomplete="off">
                                           @error('old_password')
                                         <span class="text-danger">
@@ -58,11 +58,20 @@
                                         </span>
                                           @enderror
                                       </div>
-                                      <div class="mb-3">
-                                        <label for="email" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" name="email" value="{{$profile->email}}" id="exampleInputEmail1" placeholder="Email">
-                                    </div>
-
+                                    <div class="mb-3">
+                                          <label for="name" class="form-label">New Password</label>
+                                          <input type="password" class="form-control @error('new_password')
+                                        is-invalid @enderror" name="new_password" id="new_password" autocomplete="off">
+                                          @error('new_password')
+                                        <span class="text-danger">
+                                            {{$message}}
+                                        </span>
+                                          @enderror
+                                      </div>
+                                    <div class="mb-3">
+                                          <label for="name" class="form-label">Confirm Password</label>
+                                          <input type="password" class="form-control" name="new_password_confirmation" id="new_password_confirmation" autocomplete="off">
+                                      </div>
 
                                       <button type="submit" class="btn btn-primary me-2">Update</button>
                                   </form>
