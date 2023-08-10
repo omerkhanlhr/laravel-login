@@ -35,4 +35,26 @@ class AdminController extends Controller
         $profile=User::find($id);
         return view('admin.admin_profile',compact('profile'));
     }
+
+    public function update_profile(Request $req)
+    {
+        $id= Auth::user()->id;
+        $data=User::find($id);
+        $data->name=$req->name;
+        $data->email=$req->email;
+        if($req->file('photo'))
+        {
+            $file=$req->file('photo');
+            @unlink(public_path('images/admin_images/'.$data->photo));
+            $filename=date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('images/admin_images'),$filename);
+            $data['photo']=$filename;
+        }
+        $data->save();
+        $notification=array(
+            'message'=>'Admin Profile Updated Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }
