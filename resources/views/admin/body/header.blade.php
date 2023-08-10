@@ -12,7 +12,7 @@
             </div>
         </form>
         <ul class="navbar-nav">
-            
+
                 <div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
     <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
                         <p class="mb-0 fw-bold">Web Apps</p>
@@ -193,7 +193,7 @@
                     </div>
     <ul class="list-unstyled p-1">
       <li class="dropdown-item py-2">
-        <a href="pages/general/profile.html" class="text-body ms-0">
+        <a href="{{route('admin.profile')}}" class="text-body ms-0">
           <i class="me-2 icon-md" data-feather="user"></i>
           <span>Profile</span>
         </a>
