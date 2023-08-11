@@ -44,6 +44,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::post('/admin/password/update',[AdminController::class,'update_password'])->name('update.admin_password');
 
 });
+
+Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
+
 Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard',[AgentController::class,'index'])->name('agent.dashboard');
     Route::get('/agent/logout',[AgentController::class,'logout'])->name('agent.logout');
@@ -53,6 +56,11 @@ Route::middleware(['auth','role:agent'])->group(function(){
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(PropertyController::class)->group(function(){
         Route::get('/all/type','AllType')->name('all.type');
+        Route::get('/add/property','AddProperty')->name('add.property');
+        Route::get('/edit/property/{id}','EditProperty')->name('edit.type');
+        Route::get('/delete/property/{id}','DeleteProperty')->name('delete.type');
+        Route::post('/save/property','SaveProperty')->name('save.property');
+        Route::post('/update/property','UpdateProperty')->name('update.property');
     });
 
 });
