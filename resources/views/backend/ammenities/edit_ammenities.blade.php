@@ -9,19 +9,16 @@
             <div class="card">
                 <div class="card-body">
 
-                                  <h6 class="card-title">Edit Property Info</h6>
+                                  <h6 class="card-title">Edit Ammenitie Info</h6>
 
-                                  <form method="post" action="{{route('update.property')}}" class="forms-sample">
+                                  <form method="post" action="{{route('update.ammenitie')}}" class="forms-sample">
                                     @csrf
                                     <input type="hidden" value="{{$data->id}}" name="id">
                                     <div class="mb-3">
-                                          <label for="type_name" class="form-label">Property Name</label>
-                                          <input type="text" class="form-control" name="type_name" value="{{$data->type_name}}" id="name" placeholder="Email">
+                                          <label for="type_name" class="form-label">Ammenitie Name</label>
+                                          <input type="text" class="form-control" name="ammenity" value="{{$data->ammenities_name}}" id="name" placeholder="Email">
                                       </div>
-                                      <div class="mb-3">
-                                        <label for="email" class="form-label">Property Icon</label>
-                                        <input type="text" class="form-control" name="type_icon" value="{{$data->type_icon}}" id="exampleInputEmail1" placeholder="Email">
-                                    </div>
+
                                       <button type="submit" class="btn btn-primary me-2">Update</button>
                                   </form>
 

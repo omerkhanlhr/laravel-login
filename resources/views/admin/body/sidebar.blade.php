@@ -28,7 +28,7 @@
             <div class="collapse" id="emails">
               <ul class="nav sub-menu">
                 <li class="nav-item">
-                  <a href="{{route('all.type')}}" class="nav-link">All Type</a>
+                  <a href="{{route('all.type')}}" class="nav-link">All Properties</a>
                 </li>
                 <li class="nav-item">
                   <a href="pages/email/read.html" class="nav-link">Add Type</a>
@@ -37,6 +37,25 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ammenitie" role="button" aria-expanded="false" aria-controls="emails">
+              <i class="link-icon" data-feather="mail"></i>
+              <span class="link-title">Ammenitie Type</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="ammenitie">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{route('ammenities.type')}}" class="nav-link">All Ammenities</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Add Ammenitie</a>
+                </li>
+
+              </ul>
+            </div>
+          </li>
+
 
 
         <li class="nav-item">

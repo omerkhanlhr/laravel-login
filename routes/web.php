@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\AmmenitiesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
@@ -61,6 +62,18 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/delete/property/{id}','DeleteProperty')->name('delete.type');
         Route::post('/save/property','SaveProperty')->name('save.property');
         Route::post('/update/property','UpdateProperty')->name('update.property');
+    });
+
+});
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(AmmenitiesController::class)->group(function(){
+        Route::get('/all/ammenities','AllAmmenities')->name('ammenities.type');
+        Route::get('/add/ammenitie','AddAmmenitie')->name('add.ammenitie');
+        Route::get('/edit/ammenitie/{id}','EditAmmenitie')->name('edit.ammenitie');
+        Route::get('/delete/ammenitie/{id}','DeleteAmmenitie')->name('delete.ammenitie');
+        Route::post('/save/ammenitie','SaveAmmenitie')->name('save.ammenitie');
+        Route::post('/update/ammenitie','UpdateAmmenitie')->name('update.ammenitie');
     });
 
 });

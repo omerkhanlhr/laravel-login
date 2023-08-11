@@ -45,10 +45,10 @@ class PropertyController extends Controller
    {
         $id=$req->id;
     //  print_r($req->all());
-        $req->validate([
-            'type_name'=>'required|max:200|unique:properties',
-            'type_icon'=>'required'
-        ]);
+        // $req->validate([
+        //     'type_name'=>'required|max:200|unique:properties',
+        //     'type_icon'=>'required'
+        // ]);
        Property::findOrFail($id)->update([
             'type_name'=>$req->type_name,
             'type_icon'=>$req->type_icon
