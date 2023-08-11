@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -48,5 +49,11 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/logout',[AgentController::class,'logout'])->name('agent.logout');
 });
 
-Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(PropertyController::class)->group(function(){
+        Route::get('/all/type','AllType')->name('all.type');
+    });
+
+});
 
