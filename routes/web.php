@@ -5,6 +5,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\AmmenitiesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,7 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/logout',[AgentController::class,'logout'])->name('agent.logout');
 });
 
+// -------------------------------------------------------------------------
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(PropertyController::class)->group(function(){
@@ -66,6 +68,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 });
 
+// -------------------------------------------------------------------------
+
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(AmmenitiesController::class)->group(function(){
         Route::get('/all/ammenities','AllAmmenities')->name('ammenities.type');
@@ -74,6 +78,19 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/delete/ammenitie/{id}','DeleteAmmenitie')->name('delete.ammenitie');
         Route::post('/save/ammenitie','SaveAmmenitie')->name('save.ammenitie');
         Route::post('/update/ammenitie','UpdateAmmenitie')->name('update.ammenitie');
+    });
+
+});
+// ---------------------------------------------------------------------------------
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(RoleController::class)->group(function(){
+        Route::get('/all/permission','Allpermission')->name('all.permission');
+        Route::get('/add/permission','Addpermission')->name('add.permission');
+        Route::get('/edit/permission/{id}','Editpermission')->name('edit.permission');
+        Route::get('/delete/permission/{id}','Deletepermission')->name('delete.permission');
+        Route::post('/save/permission','Savepermission')->name('save.permission');
+        Route::post('/update/permission','Updatepermission')->name('update.permission');
     });
 
 });
