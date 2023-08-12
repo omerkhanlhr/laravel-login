@@ -24,10 +24,10 @@
                             #exampleFormControlSelect1 {
                                 width: 100%;
                                 padding: 10px;
-                                border: 1px solid #ccc;
+                                border: 1px solid #ddc2d7;
                                 border-radius: 4px;
                                 font-size: 16px;
-                                color: #333;
+                                color: #1d1919;
                             }
                         </style>
 

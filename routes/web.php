@@ -90,8 +90,10 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/import/permission','Importpermission')->name('import.permission');
         Route::get('/edit/permission/{id}','Editpermission')->name('edit.permission');
         Route::get('/delete/permission/{id}','Deletepermission')->name('delete.permission');
+        Route::get('/export/permission','Exportpermission')->name('export');
         Route::post('/save/permission','Savepermission')->name('save.permission');
         Route::post('/update/permission','Updatepermission')->name('update.permission');
+        Route::post('/import/permission','Import')->name('import');
     });
 
 });

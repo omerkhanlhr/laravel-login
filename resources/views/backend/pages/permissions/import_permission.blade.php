@@ -2,11 +2,7 @@
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <div class="page-content">
-        <nav class="page-breadcrumb">
-            <ol class="breadcrumb">
-                <a href="#" class="btn btn-inverse-danger">Download Now</a>
-            </ol>
-        </nav>
+
 
         <div class="col-md-8 col-xl-8 middle-wrapper">
             <div class="row">
@@ -16,7 +12,7 @@
                         <h6 class="card-title">Import Permission</h6>
 
 
-                        <form  method="post"  class="forms-sample">
+                        <form  method="post" action="{{route('import')}}" enctype="multipart/form-data" class="forms-sample">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name" class="form-label">Xlsx File Import</label>
