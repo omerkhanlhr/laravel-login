@@ -31,13 +31,14 @@
                             }
                         </style>
 
-                        <form id="myForm" method="post" action="{{ route('save.permission') }}" class="forms-sample">
+                        <form id="myForm" method="post" action="{{ route('update.permission') }}" class="forms-sample">
                             @csrf
+                            <input type="hidden" name="id" id="id" value="{{$data->id}}">
                             <div class="form-group mb-3">
                                 <label for="name" class="form-label">Permission Name</label>
                                 <input type="text"
                                     class="form-control"
-                                    name="name" id="ammenities_name" >
+                                    name="name" id="ammenities_name" value="{{$data->name}}">
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label">Select a Group</label>
@@ -45,23 +46,23 @@
 
                                     <option selected disabled>Select Group</option>
 
-                                    <option value="type">Property Type</option>
-                                    <option value="state">State</option>
-                                    <option value="amenities">Amenities</option>
-                                    <option value="property">Property</option>
-                                    <option value="history">Package History</option>
-                                    <option value="message">Property Message</option>
-                                    <option value="testimonials">Testimonials</option>
-                                    <option value="agent">Manage Agent</option>
-                                    <option value="category">Blog Category</option>
-                                    <option value="post">Blog Post</option>
-                                    <option value="comment">Blog Comment</option>
-                                    <option value="smtp">SMTP Setting</option>
-                                    <option value="site">Site Settings</option>
-                                    <option value="role">Role & Permissions</option>
+                                    <option value="type"{{$data->group_name=='type'? 'selected' : ''}}>Property Type</option>
+                                    <option value="state"{{$data->group_name=='state'? 'selected' : ''}}>State</option>
+                                    <option value="amenities"{{$data->group_name=='amenities'? 'selected' : ''}}>Amenities</option>
+                                    <option value="property"{{$data->group_name=='property'? 'selected' : ''}}>Property</option>
+                                    <option value="history"{{$data->group_name=='history' ? 'selected' : ''}}>Package History</option>
+                                    <option value="message"{{$data->group_name=='message'? 'selected' : ''}}>Property Message</option>
+                                    <option value="testimonials"{{$data->group_name=='testimonials'? 'selected' : ''}}>Testimonials</option>
+                                    <option value="agent"{{$data->group_name=='agent'? 'selected' : ''}}>Manage Agent</option>
+                                    <option value="category"{{$data->group_name=='category'? 'selected' : ''}}>Blog Category</option>
+                                    <option value="post"{{$data->group_name=='post'? 'selected' : ''}}>Blog Post</option>
+                                    <option value="comment"{{$data->group_name=='comment'? 'selected' : ''}}>Blog Comment</option>
+                                    <option value="smtp"{{$data->group_name=='smtp'? 'selected' : ''}}>SMTP Setting</option>
+                                    <option value="site"{{$data->group_name=='site'? 'selected' : ''}}>Site Settings</option>
+                                    <option value="role"{{$data->group_name=='role'? 'selected' : ''}}>Role & Permissions</option>
                                 </select>
                             </div>
-                         <button type="submit" class="btn btn-primary me-2">Add Permission</button>
+                         <button type="submit" class="btn btn-primary me-2">Update Permission</button>
                         </form>
 
                     </div>
