@@ -87,6 +87,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(RoleController::class)->group(function(){
         Route::get('/all/permission','Allpermission')->name('all.permission');
         Route::get('/add/permission','Addpermission')->name('add.permission');
+        Route::get('/import/permission','Importpermission')->name('import.permission');
         Route::get('/edit/permission/{id}','Editpermission')->name('edit.permission');
         Route::get('/delete/permission/{id}','Deletepermission')->name('delete.permission');
         Route::post('/save/permission','Savepermission')->name('save.permission');
