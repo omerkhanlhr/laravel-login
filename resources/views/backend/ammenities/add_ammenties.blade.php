@@ -10,19 +10,14 @@
 
                         <h6 class="card-title">Add Ammenitie</h6>
 
-                        <form method="post" action="{{ route('save.ammenitie') }}" class="forms-sample">
+                        <form id="myForm" method="post" action="{{ route('save.ammenitie') }}" class="forms-sample">
                             @csrf
-                            <div class="mb-3">
+                            <div class="form-group mb-3">
                                 <label for="name" class="form-label">Ammenitie Name</label>
                                 <input type="text"
-                                    class="form-control @error('ammenities_name')
-                                        is-invalid @enderror"
+                                    class="form-control"
                                     name="ammenities_name" id="ammenities_name" >
-                                @error('ammenities_name')
-                                    <span class="text-danger">
-                                        {{ $message }}
-                                    </span>
-                                @enderror
+
                             </div>
 
                             <button type="submit" class="btn btn-primary me-2">Add Ammenitie</button>
@@ -41,4 +36,35 @@
     </div>
 
     </div>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    ammenities_name: {
+                        required : true,
+                    },
+
+                },
+                messages :{
+                    ammenities_name: {
+                        required : 'Please Enter Ammenitie Name',
+                    },
+
+
+                },
+                errorElement : 'span',
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
+    </script>
 @endsection
