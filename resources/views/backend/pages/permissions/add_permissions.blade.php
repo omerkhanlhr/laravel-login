@@ -9,27 +9,7 @@
                     <div class="card-body">
 
                         <h6 class="card-title">Add Permission</h6>
-                        <style>
-                            /* Custom styles for the form */
-                            .form-group {
-                                margin-bottom: 20px;
-                            }
 
-                            .form-label {
-                                font-size: 18px;
-                                display: block;
-                                margin-bottom: 10px;
-                            }
-
-                            #exampleFormControlSelect1 {
-                                width: 100%;
-                                padding: 10px;
-                                border: 1px solid #ccc;
-                                border-radius: 4px;
-                                font-size: 16px;
-                                color: #333;
-                            }
-                        </style>
 
                         <form id="myForm" method="post" action="{{ route('save.permission') }}" class="forms-sample">
                             @csrf
@@ -41,9 +21,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label">Select a Group</label>
-                                <select name="group_name" id="exampleFormControlSelect1">
+                                <select name="group_name" class="form-select" id="exampleFormControlSelect1">
 
-                                    <option selected disabled>Select Group</option>
+                                    <option selected="" disabled="">Select Group</option>
 
                                     <option value="type">Property Type</option>
                                     <option value="state">State</option>
@@ -61,7 +41,7 @@
                                     <option value="role">Role & Permissions</option>
                                 </select>
                             </div>
-                         <button type="submit" class="btn btn-primary me-2">Add Permission</button>
+                         <button type="submit" class="btn btn-primary me-2 mt-4">Add Permission</button>
                         </form>
 
                     </div>

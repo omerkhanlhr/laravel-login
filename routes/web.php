@@ -97,4 +97,20 @@ Route::middleware(['auth','role:admin'])->group(function(){
     });
 
 });
+// ---------------------------------------------------------------------------------------------
 
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(RoleController::class)->group(function(){
+        Route::get('/all/role','Allrole')->name('all.role');
+        Route::get('/add/role','Addrole')->name('add.role');
+        Route::get('/import/role','Importrole')->name('import.role');
+        Route::get('/edit/role/{id}','Editrole')->name('edit.role');
+        Route::get('/delete/role/{id}','Deleterole')->name('delete.role');
+        Route::post('/save/role','Saverole')->name('save.role');
+        Route::post('/update/role','Updaterole')->name('update.role');
+        Route::get('/add/role/permission','AddRolesPermission')->name('add.role.permission');
+
+    });
+
+});
