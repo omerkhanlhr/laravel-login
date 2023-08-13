@@ -8,28 +8,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title">Add Permission</h6>
-                        <style>
-                            /* Custom styles for the form */
-                            .form-group {
-                                margin-bottom: 20px;
-                            }
-
-                            .form-label {
-                                font-size: 18px;
-                                display: block;
-                                margin-bottom: 10px;
-                            }
-
-                            #exampleFormControlSelect1 {
-                                width: 100%;
-                                padding: 10px;
-                                border: 1px solid #ddc2d7;
-                                border-radius: 4px;
-                                font-size: 16px;
-                                color: #1d1919;
-                            }
-                        </style>
+                        <h6 class="card-title">Edit Permission</h6>
 
                         <form id="myForm" method="post" action="{{ route('update.permission') }}" class="forms-sample">
                             @csrf
