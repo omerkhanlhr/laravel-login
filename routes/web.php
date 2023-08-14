@@ -118,3 +118,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
     });
 
 });
+
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/all/admin','Alladmin')->name('all.admin');
+        Route::get('/add/admin','Addadmin')->name('add.admin');
+        Route::get('/edit/admin/{id}','Editadmin')->name('edit.admin');
+        Route::get('/delete/admin/{id}','Deleteadmin')->name('delete.admin');
+        Route::post('/store/admin','Storeadmin')->name('store.admin');
+        Route::post('/update/admin/{id}','Updateadmin')->name('update.admin');
+        });
+    });
