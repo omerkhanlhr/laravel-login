@@ -18,6 +18,7 @@
             <span class="link-title">Dashboard</span>
           </a>
         </li>
+
         <li class="nav-item nav-category">Real Estate</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
@@ -27,16 +28,19 @@
             </a>
             <div class="collapse" id="emails">
               <ul class="nav sub-menu">
+                {{-- @if(Auth::user()->can('site.settings')) --}}
                 <li class="nav-item">
                   <a href="{{route('all.type')}}" class="nav-link">All Properties</a>
                 </li>
+
                 <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Add Type</a>
+                  <a href="{{route('add.property')}}" class="nav-link">Add Type</a>
                 </li>
 
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ammenitie" role="button" aria-expanded="false" aria-controls="emails">
               <i class="link-icon" data-feather="mail"></i>
@@ -49,7 +53,7 @@
                   <a href="{{route('ammenities.type')}}" class="nav-link">All Ammenities</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Add Ammenitie</a>
+                  <a href="{{route('add.ammenitie')}}" class="nav-link">Add Ammenitie</a>
                 </li>
 
               </ul>
@@ -74,10 +78,10 @@
           <div class="collapse" id="uiComponents">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="pages/ui-components/accordion.html" class="nav-link">Accordion</a>
+                <a href="#" class="nav-link">Accordion</a>
               </li>
               <li class="nav-item">
-                <a href="pages/ui-components/alerts.html" class="nav-link">Alerts</a>
+                <a href="#" class="nav-link">Alerts</a>
               </li>
             </ul>
           </div>
