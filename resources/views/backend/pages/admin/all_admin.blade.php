@@ -24,7 +24,9 @@
           <tr>
             <th>Sr.No.</th>
             <th>Name</th>
-            <th>Group Name</th>
+            <th>Image</th>
+            <th>Email</th>
+            <th>Role</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -50,7 +52,6 @@
                 <a href="{{route('edit.admin',$item->id)}}" class="btn btn-inverse-warning">Edit</a>
                 <a href="{{route('delete.admin',$item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
             </td>
-
           </tr>
           @endforeach
         </tbody>
